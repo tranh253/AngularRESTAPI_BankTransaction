@@ -1,0 +1,20 @@
+{
+    "clients": [
+        {
+            "id": "1",
+            "name": "Mr A",
+            "amount": "2000",
+            "income": "3000",
+            "transaction": {
+                "receive" : {
+                    "id": "1a",
+                    "amount": "10"
+                },
+                "payment": {
+                    "id": "1b",
+                    "amount": "50"
+                }
+            }
+        }
+    ]
+}
