@@ -30,9 +30,16 @@
         "amount": 800,
         "description": "Paying house rent",
         "type": "payment"
+      },
+      {
+        "transaction_id": "1e",
+        "date": "04.06.2022",
+        "amount": 500,
+        "description": "Buying bicycle",
+        "type": "payment"
       }
     ],
-    "balance": 2140,
+    "balance": 1640,
     "currency": "EUR"
   }
 }

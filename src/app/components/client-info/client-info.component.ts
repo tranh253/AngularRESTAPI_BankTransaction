@@ -22,9 +22,9 @@ export class ClientInfoComponent implements OnInit {
   }
 
   // Calculate balance
-  async calculateBalance() {
+  calculateBalance() {
     let balance = 0;
-    await this.ClientInfo.transactions.forEach((transaction) => {
+    this.ClientInfo.transactions.forEach((transaction) => {
       if (transaction.type === 'receive') {
         balance = balance + transaction.amount;
       } else {
