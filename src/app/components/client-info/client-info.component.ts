@@ -33,6 +33,6 @@ export class ClientInfoComponent implements OnInit {
     });
     this.ClientInfo.balance = balance;
     console.log(this.ClientInfo);
-    this.clientService.UpdateBalance(this.ClientInfo).subscribe((res) => {});
+    this.clientService.UpdateBalance(this.ClientInfo);
   }
 }
