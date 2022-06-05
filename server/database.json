@@ -1,20 +1,31 @@
 {
-    "clients": [
+    "transaction": [
         {
-            "id": "1",
-            "name": "Mr A",
-            "amount": "2000",
-            "income": "3000",
-            "transaction": {
-                "receive" : {
-                    "id": "1a",
-                    "amount": "10"
+            "user_id": "1abc",
+            "name": "Mr A",           
+            "details": [
+                {
+                    "transaction_id": "1a",
+                    "type": "receive",
+                    "amount": 10
                 },
-                "payment": {
-                    "id": "1b",
-                    "amount": "50"
+                {
+                    "transaction_id": "1b",
+                    "type": "payment",
+                    "amount": 50
+                },
+                {
+                    "transaction_id": "1c",
+                    "type": "receive",
+                    "amount": 3000
                 }
-            }
+            ]
+        }
+    ],
+    "balance" : [
+        {
+            "user_id": "1abc",
+            "amount": 2000
         }
     ]
 }
