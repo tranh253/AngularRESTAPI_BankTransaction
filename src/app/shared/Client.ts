@@ -10,4 +10,5 @@ export class Client {
     }
   ];
   balance: number;
+  currency: string;
 }

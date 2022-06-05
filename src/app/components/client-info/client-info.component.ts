@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, NgZone } from '@angular/core';
 import { ClientService } from 'src/app/shared/client.service';
 
 @Component({
@@ -8,7 +8,7 @@ import { ClientService } from 'src/app/shared/client.service';
 })
 export class ClientInfoComponent implements OnInit {
   ClientInfo: any = [];
-  constructor(public clientService: ClientService) {}
+  constructor(public clientService: ClientService, private ngZone: NgZone) {}
 
   ngOnInit(): void {
     this.loadClientInfo();
@@ -22,7 +22,17 @@ export class ClientInfoComponent implements OnInit {
   }
 
   // Calculate balance
-  calculateBalance() {
-    this.ClientInfo.balance;
+  async calculateBalance() {
+    let balance = 0;
+    await this.ClientInfo.transactions.forEach((transaction) => {
+      if (transaction.type === 'receive') {
+        balance = balance + transaction.amount;
+      } else {
+        balance = balance - transaction.amount;
+      }
+    });
+    this.ClientInfo.balance = balance;
+    console.log(this.ClientInfo);
+    this.clientService.UpdateBalance(this.ClientInfo).subscribe((res) => {});
   }
 }

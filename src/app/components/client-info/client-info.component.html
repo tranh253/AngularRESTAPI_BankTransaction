@@ -1,8 +1,9 @@
-<div>
-    <h1 class="text-center">Bank Transaction</h1>
-    <div>
-
+<div class="p-4 d-flex flex-wrap">
+    <div class="p-2 d-flex flex-row align-items-center w-100">
+        <h1 class="mr-5">Bank Transaction</h1>
+        <h2 class="pt-1 position-absolute end-0 mr-4">Balance: {{ClientInfo.balance + " " + ClientInfo.currency}}</h2>
     </div>
+    
     <table class="table table-bordered">
         <thead>
             <tr>
@@ -26,7 +27,7 @@
         </tbody>
     </table>
     <div>
-        <button type="button" class="btb btn-success btn-sm move-right">
+        <button type="button" class="btb btn-success btn-sm move-right" (click)="calculateBalance()">
             Calculate balance
         </button>
     </div>
