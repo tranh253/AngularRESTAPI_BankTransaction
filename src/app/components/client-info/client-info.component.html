@@ -1,0 +1,33 @@
+<div>
+    <h1 class="text-center">Bank Transaction</h1>
+    <div>
+
+    </div>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th scope="col">Date</th>
+                <th scope="col">Description</th>
+                <th scope="col">Amount</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let transaction of ClientInfo.transactions">
+                <td>
+                    {{transaction.date}}
+                </td>
+                <td>
+                    {{transaction.description}}
+                </td>
+                <td>
+                    {{transaction.type === "payment" ? "-" +  transaction.amount : transaction.amount}}
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <div>
+        <button type="button" class="btb btn-success btn-sm move-right">
+            Calculate balance
+        </button>
+    </div>
+</div>

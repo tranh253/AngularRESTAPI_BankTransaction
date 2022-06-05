@@ -1,9 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-const routes: Routes = [];
+import { ClientInfoComponent } from './components/client-info/client-info.component';
+const routes: Routes = [
+  { path: '', pathMatch: 'full', redirectTo: 'client-info' },
+  { path: 'client-info', component: ClientInfoComponent },
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
