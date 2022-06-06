@@ -16,7 +16,7 @@ export class ClientInfoComponent implements OnInit {
 
   // Client Info
   loadClientInfo() {
-    return this.clientService.GetClientTransaction().subscribe((data: {}) => {
+    return this.clientService.GetClientInfo().subscribe((data: {}) => {
       this.ClientInfo = data;
     });
   }

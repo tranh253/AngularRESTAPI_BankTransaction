@@ -30,7 +30,7 @@ export class ClientService {
   }
 
   // GET
-  GetClientTransaction(): Observable<Client> {
+  GetClientInfo(): Observable<Client> {
     return this.http
       .get<Client>(this.baseUrl + '/Client')
       .pipe(retry(1), catchError(this.errorHandle));
